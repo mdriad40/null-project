@@ -26,14 +26,14 @@
                 if (!userData) {
                     alert('You are not authorized to access the admin panel.');
                     await auth.signOut();
-                    window.location.href = 'login.html';
+                    window.location.href = 'index.html';
                     return;
                 }
 
                 if (userData.blocked) {
                     alert('Your account has been temporarily blocked. Please contact the administrator.');
                     await auth.signOut();
-                    window.location.href = 'login.html';
+                    window.location.href = 'index.html';
                     return;
                 }
 
@@ -77,7 +77,7 @@
 
         } else {
             // No user logged in, redirect to login
-            window.location.href = 'login.html';
+            window.location.href = 'index.html';
         }
     });
 
@@ -210,7 +210,7 @@
         if (confirm('Are you sure you want to logout?')) {
             try {
                 await auth.signOut();
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
             } catch (error) {
                 console.error('Logout error:', error);
                 alert('Error logging out. Please try again.');
